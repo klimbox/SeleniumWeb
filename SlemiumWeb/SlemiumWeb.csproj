@@ -88,6 +88,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalcChrome.cs" />
+    <Compile Include="CalcPagePattern.cs" />
+    <Compile Include="JsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NUnitWeb.cs" />
   </ItemGroup>
