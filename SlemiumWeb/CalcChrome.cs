@@ -30,7 +30,7 @@ namespace SlemiumWeb
             Driver.Quit();
         }
     }
-
+    /*
     [TestClass]
     public class IETest : CalcBTNTest
     {
@@ -124,7 +124,7 @@ namespace SlemiumWeb
             Driver.Quit();
         }
     }
-
+    */
     [TestClass]
     public abstract class CalcBTNTest
     {
