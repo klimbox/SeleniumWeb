@@ -9,7 +9,7 @@ using OpenQA.Selenium.Firefox;
 namespace SlemiumWeb
 {
     [TestClass]
-    public class ChromeTest : CalcBTNTest
+    public class ChromeTestPHP : CalcBTNTest
     {
         static IWebDriver MakeDriver()
         {
@@ -21,6 +21,28 @@ namespace SlemiumWeb
         {
             Driver = MakeDriver();
             Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
+        }
+
+        [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            Driver.Close();
+            Driver.Quit();
+        }
+    }
+    [TestClass]
+    public class ChromeTestHTTP : CalcBTNTest
+    {
+        static IWebDriver MakeDriver()
+        {
+            return new ChromeDriver();
+        }
+
+        [ClassInitialize]
+        public static void ClassInitialize(TestContext context)
+        {
+            Driver = MakeDriver();
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
         }
 
         [ClassCleanup]
