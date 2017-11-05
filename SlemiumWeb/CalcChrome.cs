@@ -43,7 +43,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            Driver.Navigate().GoToUrl("file:///D:/ORT%20Course/Calc/Html+JS/Calc.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
 
         [ClassCleanup]
@@ -66,7 +66,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            Driver.Navigate().GoToUrl("file:///D:/ORT%20Course/Calc/Html+JS/Calc.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
 
         [ClassCleanup]
@@ -89,7 +89,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            Driver.Navigate().GoToUrl("file:///D:/ORT%20Course/Calc/Html+JS/Calc.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
 
         [ClassCleanup]
@@ -114,7 +114,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            Driver.Navigate().GoToUrl("file:///D:/ORT%20Course/Calc/Html+JS/Calc.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
 
         [ClassCleanup]
