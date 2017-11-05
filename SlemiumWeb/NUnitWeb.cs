@@ -97,6 +97,7 @@ namespace SlemiumWeb
             public void CloseWeb()
             {
                 driver.Close();
+                driver.Dispose();
             }
         }
     }

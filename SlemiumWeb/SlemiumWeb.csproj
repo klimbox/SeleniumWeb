@@ -129,6 +129,9 @@
       <Link>IEDriverServer.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="CalcScript.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Readme.txt" />
     <Content Include="source.extension.vsixmanifest" />
   </ItemGroup>

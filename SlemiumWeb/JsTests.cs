@@ -12,7 +12,7 @@ namespace SlemiumWeb
         [ClassInitialize]
         static public void ClassSetUpScriptTests(TestContext tc)
         {
-            TestScript.AppendFile(@"D:/ORT Course/Calc/Html+JS/CalcScript.js");
+            TestScript.AppendFile(@"CalcScript.js");
             TestScript.AppendBlock(new JsAssertLibrary());
         }
 

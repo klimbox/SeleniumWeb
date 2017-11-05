@@ -137,6 +137,7 @@ namespace SlemiumWeb
         {
             Driver.Close();
             Driver.Quit();
+            Driver.Dispose();
         }
 
         [TestInitialize]
