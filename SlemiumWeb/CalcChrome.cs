@@ -307,6 +307,7 @@ namespace SlemiumWeb
         }
     }
 
+    /*
     [TestClass]
     public class CalcTBTest
     {
@@ -317,7 +318,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = new ChromeDriver();
-            Driver.Navigate().GoToUrl("file:///D:/ORT%20Course/Calc/Html+JS/CalcTB.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
 
         [TestMethod]
@@ -397,5 +398,5 @@ namespace SlemiumWeb
             Driver.Quit();
         }
     }
-    
+    */
 }
