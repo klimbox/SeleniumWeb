@@ -9,7 +9,7 @@ namespace SlemiumWeb
     public class ClalcPage
     {
         private readonly IWebDriver driver;
-        private readonly string url = @"file:///G:/ORT%20Course/Calc/Html+JS/Calc.html";
+        private readonly string url = @"http://localhost/ForSelenium/calc.html";
 
         public ClalcPage(IWebDriver browser)
         {
