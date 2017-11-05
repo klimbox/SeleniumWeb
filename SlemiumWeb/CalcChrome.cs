@@ -5,6 +5,7 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Firefox;
+using System.IO;
 
 namespace SlemiumWeb
 {
@@ -20,7 +21,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
+            //Driver.Navigate().GoToUrl(uri.AbsoluteUri);
         }
 
         [ClassCleanup]
@@ -28,6 +29,14 @@ namespace SlemiumWeb
         {
             Driver.Close();
             Driver.Quit();
+        }
+
+        [TestInitialize]
+        public void TestSetUp()
+        {
+            //string path = Path.GetFullPath("Calc.html");
+            //var uri = new System.Uri(path);
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
         }
     }
     [TestClass]
@@ -42,7 +51,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
+            //Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
         }
 
         [ClassCleanup]
@@ -50,6 +59,14 @@ namespace SlemiumWeb
         {
             Driver.Close();
             Driver.Quit();
+        }
+
+        [TestInitialize]
+        public void TestSetUp()
+        {
+            string path = Path.GetFullPath("Calc.html");
+            var uri = new System.Uri(path);
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
         }
     }
     /*
@@ -160,13 +177,7 @@ namespace SlemiumWeb
             Driver.Close();
             Driver.Quit();
             Driver.Dispose();
-        }
-
-        [TestInitialize]
-        public void TestSetUp()
-        {
-            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
-        }
+        }        
         
         [DataTestMethod]
         [DataRow("bt1")]

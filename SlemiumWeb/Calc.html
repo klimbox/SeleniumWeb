@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta charset="utf-8" />
+<title>Calc</title>
+<style type="text/css">
+	#calculator * {font-size: 16px;}
+	#calculator table {border: solid 3px silver; border-spacing: 3px; background-color: #EEE; }
+	#calculator table td {border-spacing: 3px;}
+	input.display {width: 166px; text-align: right;}
+	td.buttons {border-top: solid 1px silver;}	
+	input[type= button] {width: 40px; height: 30px;}
+</style>
+</head>
+
+<script>
+function CountFromString(inp)
+{	
+	var str = inp.split(' ');
+	var res;
+	if(str.length == 3)
+	{
+		var a = parseInt(str[0], 10);
+		var b = parseInt(str[2], 10);
+		res = Count(a, b, str[1]);
+		return res;
+	}
+}
+
+function Count(a, b, o)
+{
+	if(o == '+') o = "%2B"
+	var req = "num1="+a+"&num2="+b+"&opr="+o;
+	var rr = new XMLHttpRequest();
+    rr.open('GET', 'http://localhost/Calcs/count.php?'+req, false);
+	rr.send(null);
+	return rr.responseText;
+}
+</script>
+
+
+<body>
+<form name="calc" id="calculator">
+	<table>
+	<tr>
+	<td>
+		<input type="text" name="input" size="16" class="display">
+	</td>
+	</tr>
+	<tr>
+	<td class="buttons">
+		<input type="button" name="bt1" value="1" OnClick="calc.input.value += '1'">
+		<input type="button" name="bt2" value="2" OnClick="calc.input.value += '2'">
+		<input type="button" name="bt3" value="3" OnClick="calc.input.value += '3'">
+		<input type="button" name="plus" value="+" OnClick="calc.input.value += ' + '">
+		<br>
+		<input type="button" name="bt4" value="4" OnClick="calc.input.value += '4'">
+		<input type="button" name="bt5" value="5" OnClick="calc.input.value += '5'">
+		<input type="button" name="bt6" value="6" OnClick="calc.input.value += '6'">
+		<input type="button" name="sub" value="-" OnClick="calc.input.value += ' - '">
+		<br>
+		<input type="button" name="bt7" value="7" OnClick="calc.input.value += '7'">
+		<input type="button" name="bt8" value="8" OnClick="calc.input.value += '8'">
+		<input type="button" name="bt9" value="9" OnClick="calc.input.value += '9'">
+		<input type="button" name="mul" value="x" OnClick="calc.input.value += ' * '">
+		<br>
+		<input type="button" name="clear" value="c" OnClick="calc.input.value = ''">
+		<input type="button" name="bt0" value="0" OnClick="calc.input.value += '0'">
+		<input type="button" name="count" value="=" OnClick="calc.input.value = CountFromString(input.value)">
+		<input type="button" name="div"  value="/" OnClick="calc.input.value += ' / '">
+	</td>
+	</tr>
+	</table>
+</form>
+</body>
+</html>
