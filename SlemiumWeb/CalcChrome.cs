@@ -36,7 +36,7 @@ namespace SlemiumWeb
         {
             //string path = Path.GetFullPath("Calc.html");
             //var uri = new System.Uri(path);
-            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
     }
     [TestClass]
@@ -51,7 +51,7 @@ namespace SlemiumWeb
         public static void ClassInitialize(TestContext context)
         {
             Driver = MakeDriver();
-            //Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
+            //Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
 
         [ClassCleanup]
@@ -66,7 +66,7 @@ namespace SlemiumWeb
         {
             string path = Path.GetFullPath("Calc.html");
             var uri = new System.Uri(path);
-            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calchttp.html");
+            Driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html");
         }
     }
     /*
