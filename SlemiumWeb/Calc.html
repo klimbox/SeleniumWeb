@@ -11,33 +11,6 @@
 	input[type= button] {width: 40px; height: 30px;}
 </style>
 </head>
-
-<script>
-function CountFromString(inp)
-{	
-	var str = inp.split(' ');
-	var res;
-	if(str.length == 3)
-	{
-		var a = parseInt(str[0], 10);
-		var b = parseInt(str[2], 10);
-		res = Count(a, b, str[1]);
-		return res;
-	}
-}
-
-function Count(a, b, o)
-{
-	if(o == '+') o = "%2B"
-	var req = "num1="+a+"&num2="+b+"&opr="+o;
-	var rr = new XMLHttpRequest();
-    rr.open('GET', 'http://localhost/Calcs/count.php?'+req, false);
-	rr.send(null);
-	return rr.responseText;
-}
-</script>
-
-
 <body>
 <form name="calc" id="calculator">
 	<table>
@@ -71,5 +44,6 @@ function Count(a, b, o)
 	</tr>
 	</table>
 </form>
+    <script src="CalcScript.js"></script>
 </body>
 </html>

@@ -10,8 +10,23 @@ function CountFromString(inp)
 		return res;
 	}
 }
-
 function Count(a, b, o)
+{
+    var req = "a=" + a + "&b=" + b + "&op=" + o;
+    var rr = new XMLHttpRequest();
+    try
+    {
+        rr.open('GET', 'http://localhost:9999/' + req, false);
+        rr.sen(null);
+        return rr.responseText;
+    }
+    catch (Error)
+    {
+        return Calc(a, b, o);
+    }
+
+}
+function Calc(a, b, o)
 {
 	var res;
 	switch(o)
@@ -22,7 +37,7 @@ function Count(a, b, o)
 		break;
 		case '*': res = a * b;
 		break;
-		case '/': if( b!=0 ) res = a / b;
+		case '/': res = a / b;
 		break;
 		default: break;
 	}

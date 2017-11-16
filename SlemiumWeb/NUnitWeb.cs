@@ -38,7 +38,7 @@ namespace SlemiumWeb
             [SetUp]
             public void CreateList()
             {
-                driver.Navigate().GoToUrl("http://localhost/ForSelenium/calc.html"); // to do: correct path
+                driver.Navigate().GoToUrl("file:///E:/SeleniumWeb/SlemiumWeb/Calc.html"); // to do: correct path
             }
 
             [Test]
